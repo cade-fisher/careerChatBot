@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    
+    <!-- Introduction -->
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <random>
+                <li>Hello! I am a career advisor chatbot 😀 </li>
+                <li>Hey there! I can assist you with your career choice! 😎 </li>
+                <li>Hi, I am a chatbot that can help you choose your career! 😉 </li>
+            </random>
+            What is your name?
+        </template>
+    </category>
+    
+    <!-- This category handles greetings when the user says "hello" -->
+    <category>
+        <pattern>hello</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+    
+    <!-- This category captures when the user introduces themselves -->
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Nice to meet you, <set name="name"><star/></set>!
+            Would you like some career advice?
+            
+            <button>
+                <text>YES</text>
+                <postback>wantsadvice</postback>
+            </button>
+            
+            <button>
+                <text>NO</text>
+                <postback>noadvice</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category handles the case where the user wants advice -->
+    <category>
+        <pattern>wantsadvice</pattern>
+        <template>Great! What is your major in college?
+        
+        <button>
+            <text>Computer Science</text>
+            <postback>CS</postback>
+        </button>
+        
+        <button>
+            <text>Civil Engineering</text>
+            <postback>CIVIL</postback>
+        </button>
+        
+        <button>
+            <text>No College</text>
+            <postback>NOCOLLEGE</postback>
+        </button>
+        </template>
+    </category>
+    
+    <!-- This category handles the case where the user does not want advice -->
+    
+    <category>
+        <pattern>noadvice</pattern>
+        <template>No problem, have a nice day! 😀</template>
+    </category>
+    
+    <!-- This category provides responses based on the user's choice of "Computer Science" -->
+    
+    <category>
+        <pattern>CS</pattern>
+        <template>
+            That is a great field with plenty of opportunities!
+            <br/>
+            What are you most interested in?
+            
+            <button>
+                <text>Data</text>
+                <postback>data</postback>
+            </button>
+            
+            <button>
+                <text>Consulting</text>
+                <postback>CON</postback>
+            </button>
+            
+            <button>
+                <text>Coding</text>
+                <postback>CO</postback>
+            </button>
+            
+            <button>
+                <text>Websites</text>
+                <postback>WEB</postback>
+            </button>
+            
+            <button>
+                <text>Security</text>
+                <postback>SEC</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides responses based on the user's choice of "Civil Engineering" -->
+    
+    <category>
+        <pattern>CIVIL</pattern>
+        <template>
+            Civil Engineering is a great major! 😁
+            <br/>
+            What are you most interested in?
+            
+            <button>
+                <text>Environment</text>
+                <postback>EN</postback>
+            </button>
+            
+            <button>
+                <text>Structures</text>
+                <postback>STR</postback>
+            </button>
+            
+            <button>
+                <text>Transportation</text>
+                <postback>TRAN</postback>
+            </button>
+            
+            <button>
+                <text>Water</text>
+                <postback>WAT</postback>
+            </button>
+            
+            <button>
+                <text>Dirt</text>
+                <postback>DIRT</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides a response when the user indicates they have no college education -->
+    
+    <category>
+        <pattern>NOCOLLEGE</pattern>
+        <template>
+            I would highly recommend earning an education! Check out this link to start now!
+            <button>
+                <text>WGU</text>
+                <url>https://www.wgu.edu/</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about Data Engineering -->
+    
+    <category>
+        <pattern>data</pattern>
+        <template>
+            It sounds like you are interested in data.
+            
+            A Data Engineer might be a great fit, as they design and maintain data systems to support data analysis and business decisions.
+            
+            <button>
+                <text>Click here for more information!</text>
+                <url>https://www.wgu.edu/career-guide/information-technology/data-engineer-career.html</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about IT Consulting -->
+    
+    <category>
+        <pattern>CON</pattern>
+        <template>
+            It sounds like you are interested in consulting.
+            
+            An IT Consultant advises organizations on how to use technology to meet their business goals and improve efficiency.
+        
+            <button>
+                <text>Click here for more information!</text>
+                <url>https://www.wgu.edu/career-guide/information-technology/it-consultant-career.html</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about Software Engineering -->
+    
+    <category>
+        <pattern>CO</pattern>
+        <template>
+            It sounds like you are interested in coding.
+            
+            A Software Engineer designs, develops, and maintains software applications to solve problems and meet user needs.
+            
+            <button>
+                <text>Click here for more information!</text>
+                <url>https://www.wgu.edu/career-guide/information-technology/software-engineer-career.html</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about Website Development -->
+    
+    <category>
+        <pattern>WEB</pattern>
+        <template>
+            It sounds like you are interested in website development.
+           
+            A Website Developer creates and maintains websites, focusing on both design and functionality to ensure a good user experience.
+            
+            <button>
+                <text>Click here for more information!</text>
+                <url>https://www.wgu.edu/career-guide/information-technology/web-developer-career.html</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about Cybersecurity Engineering -->
+    
+    <category>
+        <pattern>SEC</pattern>
+        <template>
+            It sounds like you are interested in cybersecurity.
+           
+            A Cybersecurity Engineer protects an organization’s systems and networks from cyber threats and attacks.
+            
+            <button>
+                <text>Click here for more information!</text>
+                <url>https://www.wgu.edu/career-guide/information-technology/cybersecurity-engineer-career.html</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- This category provides information about Environmental Engineering -->
+    
+    <category>
+        <pattern>EN</pattern>
+        <template>
+            It sounds like you are interested in environmental engineering.
+            An Environmental Engineer focuses on improving the environment by reducing waste and pollution and managing natural resources.
+            
+            
+        </template>
+    </category>
+    
+    <!-- This category provides information about Structural Engineering -->
+    
+    <category>
+        <pattern>STR</pattern>
+        <template>
+            A Structural Engineer designs and analyzes structures to ensure they can withstand environmental forces and human use.
+            
+            
+        </template>
+    </category>
+    
+    <!-- This category provides information about Transportation Engineering -->
+    
+    <category>
+        <pattern>TRAN</pattern>
+        <template>
+            A Transportation Engineer designs and develops infrastructure to improve transportation systems and manage traffic flow.
+            
+
+        </template>
+    </category>
+    
+    <!-- This category provides information about Water resource Engineering -->
+    
+    <category>
+        <pattern>WAT</pattern>
+        <template>
+            A Water Resource Engineer focuses on managing and developing water resources for sustainable use.
+            
+            
+        </template>
+    </category>
+    
+    <!-- This category provides information about Geotechnical Engineering -->
+    <category>
+        <pattern>DIRT</pattern>
+        <template>
+            A Geotechnical Engineer studies the behavior of soil and rock to support the design and construction of foundations and other structures.
+            
+            
+        </template>
+    </category>
+    
+    <!-- This category allows user to reset and ask for more information -->
+    
+    <category>
+        <pattern>more</pattern>
+        <template><srai>wantsadvice</srai></template>
+    </category>
+    
+</aiml>
